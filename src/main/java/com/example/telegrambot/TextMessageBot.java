@@ -77,7 +77,6 @@ public class TextMessageBot extends TelegramLongPollingBot {
         System.out.println(callbackQuery + ", " + text);
         text = extractUserInput(text);
 
-
         switch (callbackQuery) {
             case "make_low":
                 text = text.toLowerCase();
@@ -86,9 +85,7 @@ public class TextMessageBot extends TelegramLongPollingBot {
                 text = text.toUpperCase();
                 break;
         }
-
         Long chatId = update.getCallbackQuery().getFrom().getId();
-
         sendText(chatId, text, false);
     }
 
